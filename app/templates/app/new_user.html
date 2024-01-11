@@ -1,0 +1,28 @@
+<!-- yourapp/templates/user_form.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Form</title>
+</head>
+<body>
+    <h2>Create User</h2>
+    <form method="post" action="{% url 'create_user_api' %}">
+        {% csrf_token %}
+        <label for="id">id:</label>
+        <input type="text" name="id" required><br>
+
+        <label for="name">Name:</label>
+        <input type="text" name="name" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email"><br>
+
+        <label for="role">Role:</label>
+        <input type="text" name="role"><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
